@@ -219,14 +219,14 @@ int LedControl::getCharArrayPosition(char input){
      if (input==':') return 11;
      if (input=='-') return 12;
      if (input=='.') return 13;
-     if ((input =='(')) return  14;  //replace by 'ñ'   
+     if ((input =='(')) return  14;  //replace by 'Ã±'   
      if ((input >='0')&&(input <='9')) return (input-'0');
      if ((input >='A')&&(input <='Z')) return (input-'A' + 15);
      if ((input >='a')&&(input <='z')) return (input-'a' + 15);     
      return 13;
 }  
 
-void LedControl::writeString(int mtx, char * displayString) {
+void LedControl::writeString(int mtx, const char * displayString) {
   while ( displayString[0]!=0) {
     char c =displayString[0];
     int pos= getCharArrayPosition( c);
